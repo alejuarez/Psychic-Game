@@ -1,5 +1,5 @@
 // Declare Variables
-var letters = "abcdefghijklmnopqrstuvwxyz".split("");
+var letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
 var wins = 0;
 var losses = 0;
@@ -12,20 +12,20 @@ console.log(computerChoice);
 // ==============================================================================
 
 function showUserGuesses() {
-  document.getElementById("userGuess").innerHTML = userGuessesArray;
+  document.getElementById('userGuess').innerHTML = userGuessesArray;
   console.log(userGuessesArray);
 }
 
 function showNumGuesses() {
-  document.getElementById("numOfGuess").innerHTML = numGuesses;
+  document.getElementById('numOfGuess').innerHTML = numGuesses;
 }
 
 function showLosses() {
-  document.getElementById("losses").innerHTML = losses;
+  document.getElementById('losses').innerHTML = losses;
 }
 
 function showWins() {
-  document.getElementById("wins").innerHTML = wins;
+  document.getElementById('wins').innerHTML = wins;
 }
 // RESET - Sets inital state of the game
 
@@ -38,7 +38,7 @@ function reset() {
   showLosses();
   showWins();
   console.log(computerChoice);
-  console.log("reset");
+  console.log('reset');
 }
 
 // before the game starts, call reset to initalize the game
@@ -50,10 +50,10 @@ document.onkeyup = function(event) {
 
   if (!letters.includes(userGuess)) {
     alert(
-      "Your choice is not a letter, please pick a letter from the alphabet"
+      'Your choice is not a letter, please pick a letter from the alphabet'
     );
   } else if (userGuessesArray.includes(userGuess)) {
-    alert("You can only pick the same letter once");
+    alert('You can only pick the same letter once');
   } else {
     userGuessesArray.push(userGuess);
     numGuesses--;
@@ -64,18 +64,17 @@ document.onkeyup = function(event) {
   if (userGuess === computerChoice) {
     wins++;
     //userGuessesArray.push(userGuess);
-    console.log("userguess igual" + userGuess);
-    console.log("userguess igual" + userGuessesArray);
+
     showUserGuesses();
     showWins();
-    alert("You Win, YAY!!!!");
+    alert('You Win, YAY!!!!');
     reset();
   }
 
   if (numGuesses === 0) {
     losses++;
     showLosses();
-    alert("Sorry, your guess is not correct, try again!");
+    alert('Sorry, your guess is not correct, try again!');
     reset();
   }
 };
